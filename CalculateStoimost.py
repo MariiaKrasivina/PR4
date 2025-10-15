@@ -9,8 +9,10 @@ class CalculateStoimost:
     def calculate_stoimost(self, color):
         if color not in self.colors:
             raise ValueError("Неизвестный цвет")
+        
         if self.name not in self.detali:
             raise ValueError("Неизвестная деталь")
+        
         stoimost = int(round(self.colors[color] * self.detali[self.name] * 12000, 0))
         return f"Стоимость покраски детали {self.name.lower()} в {color.lower()} цвет составит {stoimost} рублей."
 
